@@ -1,0 +1,73 @@
+// package 3string;
+public class palindrom {
+    public static boolean isPalindrome(String s) {
+
+        int left = 0;
+        int right = s.length() - 1;
+
+        while (left < right) {
+
+            while (left < right && !Character.isLetterOrDigit(s.charAt(left))) {
+                left++;
+            }
+
+            while (left < right && !Character.isLetterOrDigit(s.charAt(right))) {
+                right--;
+            }
+
+            if (Character.toLowerCase(s.charAt(left)) !=
+                Character.toLowerCase(s.charAt(right))) {
+                return false;
+            }
+
+            left++;
+            right--;
+        }
+
+        return true;
+    }
+  public static void main(String[] args) {
+     String s =" noon";
+     System.out.println(isPalindrome(s)); 
+  }
+
+
+}
+// level 2 understand it as it is im to build concept
+
+class Solution {
+
+    public boolean validPalindrome(String s) {
+
+        int left = 0;
+        int right = s.length() - 1;
+
+        while (left < right) {
+
+            if (s.charAt(left) != s.charAt(right)) {
+
+                return isPalindrome(s, left + 1, right) ||
+                       isPalindrome(s, left, right - 1);
+            }
+
+            left++;
+            right--;
+        }
+
+        return true;
+    }
+
+    public boolean isPalindrome(String s, int left, int right) {
+
+        while (left < right) {
+
+            if (s.charAt(left) != s.charAt(right))
+                return false;
+
+            left++;
+            right--;
+        }
+
+        return true;
+    }
+}

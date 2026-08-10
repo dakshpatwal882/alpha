@@ -1,0 +1,1 @@
+  // return ways(n-1)+ ways(n-2);
