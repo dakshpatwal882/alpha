@@ -14,7 +14,7 @@ public class intro {
     public static node tail;
     public static int size;
 
-    // Add node at beginning
+    // Add node at beginning2    
     public void add_node(int data) {
 
         node newNode = new node(data);
@@ -223,6 +223,50 @@ public class intro {
         }
         this.size--;
     }
+
+    // slow faste approch  hellper function to check a linked list is pelindrom or not 
+    public node findmid (node head){
+        node slow=head ;
+        node fast = head ;
+        while (fast != null && fast.next !=null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+
+    // palindrom 
+
+    public boolean checkpelindrom (){
+        if (head!=null || head.next == null){
+            return true;
+        }
+        // find mid
+
+        node midnode = findmid(head);
+
+        // reverse 2nd half 
+        node prev = null;
+        node current = midnode;
+        node next;
+          while (current != null) {
+            next = current.next;
+            current.next = prev;
+            prev=current;
+            current = next;
+        }
+        node rigth = prev;// right half head
+        node left = head ;// left half head
+        // check both the half
+        while (rigth != null) {
+            if (left.data != rigth.data ){
+                return false;
+            }
+            left = left.next;
+            rigth = rigth.next;
+        }
+        return true;
+    }
     public static void main(String[] args) {
 
         intro ll = new intro();
@@ -255,5 +299,6 @@ public class intro {
         System.out.println(ll.ittrativesearch(3));
         ll.reverse();
         ll.print();
+        System.out.println(ll.checkpelindrom());
     }
 }
