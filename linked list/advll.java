@@ -13,7 +13,6 @@ public class advll {
     public static node head;
     public static node tail;
     public static int size;
-
     // Floyd Cycle Finding Algorithm
     public static boolean iscycle() {
 
