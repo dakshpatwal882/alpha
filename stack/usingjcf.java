@@ -1,7 +1,7 @@
 // Import the legacy Stack class from the Java Collections Framework
 import java.util.Stack;
 
-public class Main {
+class Main {
     public static void main(String[] args) {
         // Create an empty stack that holds Integer objects
         Stack<Integer> stack = new Stack<>();

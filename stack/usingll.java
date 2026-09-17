@@ -1,4 +1,4 @@
-public class SimpleStack {
+class SimpleStack {
     // Top points to the head node of the stack
     Node top;
 

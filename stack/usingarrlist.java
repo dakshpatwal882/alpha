@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.EmptyStackException;
 
 // Define a generic Stack class where T represents any non-primitive data type (e.g., Integer, String)
-public class ArrayListStack<T> {
+public class usingarrlist<T> {
 
     // Internal dynamic array that holds stack elements; 'final' ensures this reference cannot be reassigned
     private final ArrayList<T> list;
 
     // Constructor: executes when creating a new instance of the stack
-    public ArrayListStack() {
+    public usingarrlist() {
         // Allocate a new, empty ArrayList on the heap
         this.list = new ArrayList<>();
     }
@@ -58,7 +58,7 @@ public class ArrayListStack<T> {
     // Execution entry point to run and test the stack implementation
     public static void main(String[] args) {
         // Instantiate the stack specifically configured to store Integer objects
-        ArrayListStack<Integer> stack = new ArrayListStack<>();
+        usingarrlist<Integer> stack = new usingarrlist<>();
 
         // Add elements to the stack; 10 goes to index 0 (bottom of the stack)
         stack.push(10);
